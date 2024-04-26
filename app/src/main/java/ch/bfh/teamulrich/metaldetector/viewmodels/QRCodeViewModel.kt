@@ -12,14 +12,6 @@ import androidx.lifecycle.AndroidViewModel
 import org.json.JSONObject
 
 class QRCodeViewModel(application: Application) : AndroidViewModel(application) {
-
-    var error by mutableStateOf("")
-    private set
-
-    private fun clearError() {
-        this.error = ""
-    }
-
     var qrCode by mutableStateOf("")
         private set
 
