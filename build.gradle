@@ -1,7 +1,7 @@
 buildscript {
     ext {
-        compose_ui_version = '1.6.4'
-        camerax_version = '1.3.2'
+        compose_ui_version = '1.6.6'
+        camerax_version = '1.3.3'
         nav_version = "2.7.7"
     }
 }
