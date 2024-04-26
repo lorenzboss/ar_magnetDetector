@@ -6,20 +6,18 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import ch.bfh.teamulrich.metaldetector.ui.theme.MetalDetectorTheme
 import ch.bfh.teamulrich.metaldetector.viewmodels.MetalDetectorState
-import kotlin.math.roundToInt
 
 @Composable
 fun MetalDetectorInfoView(state: MetalDetectorState, modifier: Modifier = Modifier) {
     Column {
         Row {
-            // TODO: display current magnetic reading
+            Text(text = String.format("%.2f", state.currentMagnitude))
         }
         Row {
-            // TODO: display maximum magnetic reading
+            Text(text = String.format("%.2f", state.maxMagnitude))
         }
     }
 }
