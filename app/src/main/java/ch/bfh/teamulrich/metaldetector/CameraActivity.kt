@@ -1,11 +1,9 @@
 package ch.bfh.teamulrich.metaldetector
 
-import android.content.Intent
+import QRCameraView
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import ch.bfh.teamulrich.metaldetector.viewmodels.ReceiveQRCode
-import ch.bfh.teamulrich.metaldetector.views.reader.QRCameraView
 
 class CameraActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
