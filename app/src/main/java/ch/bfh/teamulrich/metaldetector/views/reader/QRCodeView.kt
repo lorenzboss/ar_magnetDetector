@@ -34,11 +34,12 @@ import org.json.JSONObject
 fun QRCodeView(viewModel: QRCodeViewModel = viewModel()) {
     val code = viewModel.qrCode
 
-    val scanQrCodeLauncher = rememberLauncherForActivityResult(contract = ReceiveQRCode(), onResult = {
-        if (it != null) {
-            viewModel.setCode(it)
-        }
-    })
+    val scanQrCodeLauncher =
+        rememberLauncherForActivityResult(contract = ReceiveQRCode(), onResult = {
+            if (it != null) {
+                viewModel.setCode(it)
+            }
+        })
 
     Surface(color = MaterialTheme.colors.surface, modifier = Modifier.fillMaxSize()) {
         Column(
