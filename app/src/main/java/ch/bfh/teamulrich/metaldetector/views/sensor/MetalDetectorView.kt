@@ -3,8 +3,9 @@ package ch.bfh.teamulrich.metaldetector.views.sensor
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -17,11 +18,16 @@ val MetalDetectorState.progress: Float
 
 @Composable
 fun MetalDetectorView(viewModel: MetalDetectorViewModel = viewModel()) {
+    val state by viewModel.state.collectAsState()
+
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // TODO: display MetalDetectorInfoView and MetalDetectorProgressBar
+        state.let { currentState ->
+            MetalDetectorInfoView(state = currentState)
+            MetalDetectorProgressBar(progress = currentState.progress)
+        }
     }
 }
