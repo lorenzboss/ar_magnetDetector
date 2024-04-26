@@ -1,5 +1,6 @@
 import android.content.Context
 import android.net.Uri
+import android.util.Log
 import android.util.Size
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
@@ -59,7 +60,7 @@ fun QRCameraView(onQRCodeResult: (Uri, String) -> Unit) {
                 imageCapture.takePicture(outputFileOptions, ContextCompat.getMainExecutor(context),
                     object : ImageCapture.OnImageSavedCallback {
                         override fun onError(error: ImageCaptureException) {
-                            // manage error here
+                            Log.e("QRCameraView", "Image capture failed: ${error.message}", error)
                         }
                         override fun onImageSaved(outputFileResults:
                                                   ImageCapture.OutputFileResults) {
