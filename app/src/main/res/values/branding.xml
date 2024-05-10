@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MetalDetector - AppRun</string>
+    <string name="app_name">metal detector</string>
     <string name="task_name">MetalDetector</string>
     <string name="logbook_path">ch.apprun.intent.LOG</string>
     <string name="logbook_extra">ch.apprun.logmessage</string>
